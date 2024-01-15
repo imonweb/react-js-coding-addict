@@ -1,23 +1,27 @@
+import PageLinks from './PageLinks'
 import { pageLinks, socialLinks } from './data'
 import React from 'react'
 
 const Footer = () => {
   return (
     <>
- 
+  
       <footer className="section footer">
-     
-      <ul className="footer-links">
-        {pageLinks.map((page) => {
-          const {id, href, text} = page 
+
+      <PageLinks parentClass='footer-links' itemClass='footer-link' /> 
+      {/* <ul className="footer-links">
+        {pageLinks.map((link) => {
+          const {id, href, text} = link 
           return (
             <li key={id}>
               <a href={href} className="footer-link">{text}</a>
             </li>
           )
         })}
-      </ul>
-      
+       
+      </ul> */}
+
+
       <ul className="footer-icons">
         {socialLinks.map((link) => {
           const {id, href, icon} = link 
@@ -34,7 +38,7 @@ const Footer = () => {
       </ul>
       <p className="copyright">
         copyright &copy; Backroads travel tours company
-        <span id="{new Date().getFullYear()}"></span> all rights reserved
+        <span id="date">{new Date().getFullYear()}</span> all rights reserved
       </p>
       </footer> 
   
