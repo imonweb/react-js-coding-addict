@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
 
 const url = 'https://api.github.com/users';
-// const url = {
-//   url: 'https://api.github.com/users',
-//   headers: {
-//     'User-Agent': 'request'
-//   }
-// }
 
 const FetchData = () => {
   const [users, setUsers] = useState([]);
@@ -21,9 +15,15 @@ const FetchData = () => {
   useEffect(() =>{
     // getUsers();
     const fetchData = async () => {
-      const response = await fetch(url);
-      const users = await response.json();
-      console.log(users);
+      try {
+        const response = await fetch(url);
+        const users = await response.json();
+        // console.log(users);
+        setUsers(users);
+      } catch (error) {
+        console.log(error);
+      }
+     
     }
     fetchData();
   }, [])
