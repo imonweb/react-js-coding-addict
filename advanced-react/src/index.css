@@ -61,7 +61,7 @@
 }
 
 html {
-  background-color: #444;
+  background-color: #032f3e;
 }
 
 body {
@@ -70,7 +70,8 @@ body {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   line-height: 1.75;
-  color: var(--textColor);
+  /* color: var(--textColor); */
+  color: var(--green-light);
 }
 
 p {

@@ -8,7 +8,33 @@ const ShortCircuitExamples = () => {
   const [user, setUser] = useState({ name: 'john' });
   const [isEditing, setIsEditing] = useState(false);
 
-  return <h2>short circuit - examples</h2>;
+  return (
+    <>
+     <h2>{text || 'default value'}</h2>
+     {text && <div>
+        <h2>Whatever return</h2>
+        <h2>{name}</h2>
+      </div>
+      }
+     {/* {!text && (<div>
+        <h2>Whatever return</h2>
+        <h2>{name}</h2>
+      </div>
+      )} */}
+
+      {user && <SomeComponent name={user.name} />}
+    </>
+  )
+  
 };
+
+const SomeComponent = ({name}) => {
+  return (
+    <>
+      <h2>what ever return</h2>
+      <h2>{name}</h2>
+    </>
+  )
+}
 
 export default ShortCircuitExamples;
