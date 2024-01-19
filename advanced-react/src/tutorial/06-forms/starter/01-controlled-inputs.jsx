@@ -14,6 +14,7 @@ const ControlledInputs = () => {
     e.preventDefault()
     // do something 
     console.log(name, email);
+    
   }
 
   return (

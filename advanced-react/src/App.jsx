@@ -1,4 +1,4 @@
-import { data } from './data';
+// import { data } from './data';
 
 // import Starter from './tutorial/01-useState/starter/05-useState-gotcha'
 // import Starter from './tutorial/02-useEffect/starter/06-fetch-data-axios'
@@ -10,7 +10,7 @@ import { data } from './data';
 // import { Home, About } from './tutorial/04-project-structure/starter/Pages'
 // import Example from './tutorial/04-project-structure/starter/Example'
 // import List from './tutorial/05-leverage-javascript/starter/List';
-import Form from './tutorial/06-forms/starter/01-controlled-inputs';
+import AddUser from './tutorial/06-forms/starter/02-user-challenge'
  
 
 
@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <div className='container'>
-        <Form />
+        <AddUser />
       
       </div>
       
