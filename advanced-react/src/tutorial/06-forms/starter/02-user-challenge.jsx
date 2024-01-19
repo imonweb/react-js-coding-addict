@@ -12,9 +12,19 @@ const UserChallenge = () => {
     if(!name) return;
     const fakeId = Date.now()
     // console.log(fakeId);
-    const newUser = {id: fakeId}
-    
-    console.log('form submitted');
+    const newUser = {id: fakeId, name}
+    const updatedUsers = [...users, newUser]
+    setUsers(updatedUsers)
+    setName('');
+  }
+
+  // function handleRemoveUser(e){
+  //   setUsers(users.filter((_, i) => i !== e))
+  // }
+
+  const removeUser = (id) => {
+    const updatedUsers = users.filter((person) => person.id !== id)
+    setUsers(updatedUsers)
   }
 
   return (
@@ -48,8 +58,11 @@ const UserChallenge = () => {
             // console.log(users)
         return (
           <>
-            <div key={user.id}>
-              {user.name}
+            <div>
+              <h4 key={user.id}> 
+                {user.name}
+              </h4>
+              <button onClick={() => removeUser(user.id)} className='btn'>Remove</button>
             </div>
           </>
         )
