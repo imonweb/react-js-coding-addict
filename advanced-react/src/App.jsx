@@ -10,8 +10,13 @@
 // import { Home, About } from './tutorial/04-project-structure/starter/Pages'
 // import Example from './tutorial/04-project-structure/starter/Example'
 // import List from './tutorial/05-leverage-javascript/starter/List';
-import AddUser from './tutorial/06-forms/starter/02-user-challenge'
- 
+// import AddUser from './tutorial/06-forms/starter/05-form-data'
+// import UseRefHooks from './tutorial/07-useRef/starter/01-useRef-basics'
+// import CustomHook from './tutorial/08-custom-hooks/starter/02-fetch-data'
+
+import ContextAPIFinal from './tutorial/09-context-api/final/context/Navbar'
+import ContextAPI from './tutorial/09-context-api/starter/Navbar'
+
 
 
 
@@ -24,8 +29,9 @@ function App() {
   return (
     <>
       <div className='container'>
-        <AddUser />
-      
+        <ContextAPIFinal />
+        <ContextAPI />
+        
       </div>
       
     </>
