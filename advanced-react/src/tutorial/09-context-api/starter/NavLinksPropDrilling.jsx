@@ -1,7 +1,7 @@
 import React from 'react'
-import UserContainer from './UserContainer'
+import UserContainerPropDrilling from './UserContainerPropDrilling'
 
-const NavLinks = ({user, logout}) => {
+const NavLinksPropDrilling = () => {
   return (
     <div className='nav-container'>
 
@@ -13,9 +13,9 @@ const NavLinks = ({user, logout}) => {
           <a href="#">about</a>
         </li>
       </ul>
-      <UserContainer user={user} logout={logout}/>
+      <UserContainerPropDrilling />
     </div>
   )
 }
 
-export default NavLinks
+export default NavLinksPropDrilling

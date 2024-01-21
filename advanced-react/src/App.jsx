@@ -14,8 +14,9 @@
 // import UseRefHooks from './tutorial/07-useRef/starter/01-useRef-basics'
 // import CustomHook from './tutorial/08-custom-hooks/starter/02-fetch-data'
 
-import ContextAPIFinal from './tutorial/09-context-api/final/context/Navbar'
-import ContextAPI from './tutorial/09-context-api/starter/Navbar'
+// import ContextAPIFinal from './tutorial/09-context-api/final/context/Navbar'
+// import ContextAPI from './tutorial/09-context-api/starter/Navbar'
+import ContextAPI from './tutorial/09-context-api/starter/NavbarPropDrilling'
 
 
 
@@ -29,7 +30,7 @@ function App() {
   return (
     <>
       <div className='container'>
-        <ContextAPIFinal />
+         
         <ContextAPI />
         
       </div>
