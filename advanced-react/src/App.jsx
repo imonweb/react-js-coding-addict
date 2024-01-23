@@ -16,7 +16,7 @@
 
 // import ContextAPIFinal from './tutorial/09-context-api/final/context/Navbar'
 // import ContextAPI from './tutorial/09-context-api/starter/Navbar'
-import ContextAPI from './tutorial/09-context-api/starter/NavbarPropDrilling'
+import Reducer from './tutorial/10-useReducer/starter/01-useReducer'
 
 
 
@@ -31,7 +31,7 @@ function App() {
     <>
       <div className='container'>
          
-        <ContextAPI />
+        <Reducer />
         
       </div>
       
