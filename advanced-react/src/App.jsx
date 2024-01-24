@@ -18,7 +18,9 @@
 // import ContextAPI from './tutorial/09-context-api/starter/Navbar'
 // import Reducer from './tutorial/10-useReducer/starter/01-useReducer'
 // import Performance from './tutorial/11-performance/starter/01-lower-state/index'
-import Performance from './tutorial/11-performance/starter/02-lower-state-challenge'
+// import Performance from './tutorial/11-performance/starter/02-lower-state-challenge'
+// memo hooks
+import Memo from './tutorial/11-performance/starter/03-hooks/index'
 
 
 
@@ -33,7 +35,7 @@ function App() {
     <>
       <div className='container'>
          
-        <Performance />
+        <Memo />
         
       </div>
       
