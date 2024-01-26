@@ -1,10 +1,14 @@
 import { useCallback, useState } from 'react';
 import { data } from '../../../../data';
 import List from './List';
+import slowFunction from '../../final/03-hooks/slowFunction';
 
 const LowerState = () => {
   const [people, setPeople] = useState(data);
   const [count, setCount] = useState(0);
+
+  const value = slowFunction()
+  console.log(value)
 
    const removePerson = useCallback((id) => {
       console.log(people);

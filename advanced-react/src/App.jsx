@@ -20,10 +20,9 @@
 // import Performance from './tutorial/11-performance/starter/01-lower-state/index'
 // import Performance from './tutorial/11-performance/starter/02-lower-state-challenge'
 // memo hooks
-import Memo from './tutorial/11-performance/starter/03-hooks/index'
-
-
-
+// import Memo from './tutorial/11-performance/starter/03-hooks/index'
+import Memo from './tutorial/11-performance/final/03-hooks/index'
+// import Callback from './tutorial/02-useEffect/final/04-fetch-data'
 
 import './index.css'
 import './App.css'
