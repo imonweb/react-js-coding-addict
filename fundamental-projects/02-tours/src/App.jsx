@@ -1,45 +1,52 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import Tours from "./Tours";
+import Loading from "./Loading";
 
 const url = 'https://course-api.com/react-tours-project';
  
 
 const App = () => {
   const [tours, setTours] = useState([]);
-  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
+  const fetchTours = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(url);
+      const tours = await response.json();
+      console.log(tours);
+      
+      setTours(tours);
+    } catch(error){
+      console.log(error);
+    }
+    setIsLoading(false);
+  }
   
 
   useEffect( () => {
-    const fetchTours = async () => {
-      try {
-        const response = await fetch(url);
-        const tours = await response.json();
-        
-        setTours(tours);
-      } catch(error){
-        console.log(error);
-      }
-    }
+    
     fetchTours();
   }, [])
 
-  // if(isLoading) {
-  //   return <h2>Loadding...</h2>
-  // }
-
-  // if(isError) {
-  //   return <h2>There was an error!</h2>
-  // }
-
+  
   const removeTour = (id) => {
     setTours(tours.filter((tour) => tour.id !== id))
   }
 
+  if(isLoading){
+    return ( 
+    <main>
+      <Loading />
+    </main>
+    )
+  }
 
   return (
     <main>
-      <h1>Our Tours</h1>
+      <Tours tours={tours}/>
+      {/* <h1>Our Tours</h1>
       <ul className="tours">
       {tours.map((tour) => {
         return (
@@ -57,7 +64,7 @@ const App = () => {
             </li>
         )
       })}
-      </ul>
+      </ul> */}
     </main>
   )
 };
