@@ -10,6 +10,11 @@ const App = () => {
   const [tours, setTours] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const removeTour = (id) => {
+    const newTours = tours.filter((tour) => tour.id !==id);
+    setTours(newTours);
+  }
+
   const fetchTours = async () => {
     setIsLoading(true);
     try {
@@ -30,10 +35,6 @@ const App = () => {
     fetchTours();
   }, [])
 
-  
-  const removeTour = (id) => {
-    setTours(tours.filter((tour) => tour.id !== id))
-  }
 
   if(isLoading){
     return ( 
@@ -43,28 +44,24 @@ const App = () => {
     )
   }
 
+  if(tours.length === 0){
+    return <main>
+      <div className="title">
+        <h2>No tours left</h2>
+        <button 
+          type="button"
+          style={{marginTop:'2rem'}}
+          className="btn"
+          onClick={() => fetchTours()}
+        >Refresh</button>
+      </div>
+    </main>
+  }
+
   return (
     <main>
-      <Tours tours={tours}/>
-      {/* <h1>Our Tours</h1>
-      <ul className="tours">
-      {tours.map((tour) => {
-        return (
-            <li className="single-tour">
-              <span>
-                <div className="tour-price">{tour.price}</div>
-                <img src={tour.image} className="img" alt="" />
-              </span>
-              <h5>{tour.name}</h5>
-              <div className="tour-info">
-                {tour.info}
-              </div>
-              <button className="btn" onClick={() => removeTour(id)}>Not Interested</button>
-
-            </li>
-        )
-      })}
-      </ul> */}
+      <Tours tours={tours} removeTour={removeTour}/>
+     
     </main>
   )
 };
