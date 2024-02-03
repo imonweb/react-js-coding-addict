@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 
 // [HTML Color Input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color)
 
-const Form = () => {
+const Form = ({addColor}) => {
   const [color, setColor] = useState('')
-  const handleSubmit = () => {}
+  const handleSubmit = (e) => {
+    e.preventDefault() 
+    addColor(color)
+  }
 
   return (
     <section className='container'>
