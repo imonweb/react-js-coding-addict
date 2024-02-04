@@ -13,7 +13,14 @@ const App = () => {
   // toast.success('success')
 
   const addColor = (color) => {
-    console.log(color)
+    // console.log(color)
+    try {
+      const newColors = new Values(color).all(10)
+      setColors(newColors)
+    } catch(error) {
+      // console.log(error.message);
+      toast.error(error.message)
+    }
   }
 
   return ( 
