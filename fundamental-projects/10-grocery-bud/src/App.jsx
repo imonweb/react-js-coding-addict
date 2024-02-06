@@ -55,7 +55,7 @@ const App = () => {
     } )
     setItems(newItems)
     setLocalStorage(newItems)
-    toast.success('item deleted')
+   
   }
 
   return ( 
