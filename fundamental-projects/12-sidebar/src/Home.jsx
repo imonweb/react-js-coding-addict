@@ -5,7 +5,7 @@ import {FaBars} from 'react-icons/fa'
 const Home = () => {
   const {openSidebar, openModal } = useGlobalContext()
   // console.log(openSidebar)
-  
+
   return (
     <main>
       <button
@@ -19,7 +19,7 @@ const Home = () => {
         onClick={openModal}
         className='btn'
       >
-        show modal
+        show 
       </button>
     </main>
   )
