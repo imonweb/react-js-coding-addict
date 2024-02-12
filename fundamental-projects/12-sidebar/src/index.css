@@ -355,11 +355,11 @@ Sidebar
   row-gap: 1rem;
   box-shadow: var(---red-dark);
   transition: var(--transition);
-  /* transform: translate(-100%); */ 
+  transform: translate(-100%); 
 }
-/* .show-sidebar {
+.show-sidebar {
   transform: translate(0);
-} */
+}
 @media screen and (min-width: 676px) {
   .sidebar {
     width: 400px;
@@ -384,11 +384,11 @@ Sidebar
 .logo {
   height: 40px;
 }
-/*
+
 .links a {
   display: flex;
   align-items: center;
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-transform: capitalize;
   padding: 1rem 1.5rem;
   color: var(--grey-700);
@@ -401,7 +401,7 @@ Sidebar
   color: var(--grey-800);
 }
 .links a svg {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--grey-500);
   margin-right: 1rem;
   transition: var(--transition);
@@ -422,4 +422,4 @@ Sidebar
 }
 .social-links a:hover {
   color: var(--primary-800);
-} */
+} 
