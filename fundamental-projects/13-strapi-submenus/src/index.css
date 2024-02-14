@@ -413,10 +413,10 @@ Sidebar
 Nav Links
 =============== 
 */
-/* .nav-links {
+.nav-links {
   display: none;
-} */
-/* @media screen and (min-width: 992px) {
+}
+@media screen and (min-width: 992px) {
   .nav-links {
     display: flex;
     justify-content: center;
@@ -438,7 +438,7 @@ Nav Links
     letter-spacing: var(--letterSpacing);
     cursor: pointer;
   }
-} */
+}
 
 /* 
 ============= 
