@@ -445,10 +445,10 @@ Nav Links
 Submenu
 =============== 
 */
-/* .submenu {
+.submenu {
   display: none;
-} */
-/* @media screen and (min-width: 992px) {
+}
+@media screen and (min-width: 992px) {
   .submenu {
     display: block;
     position: fixed;
@@ -492,4 +492,4 @@ Submenu
   .submenu-links svg {
     color: var(--grey-500);
   }
-} */
+} 
