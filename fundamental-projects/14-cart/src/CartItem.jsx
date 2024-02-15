@@ -1,5 +1,8 @@
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
+import { useGlobalContext } from './context';
 const CartItem = ({ id, img, title, price, amount }) => {
+  // const {greeting} = useGlobalContext()
+  // consoel.log(greeting)
   return (
     <article className='cart-item'>
       <img src={img} alt={title} />
