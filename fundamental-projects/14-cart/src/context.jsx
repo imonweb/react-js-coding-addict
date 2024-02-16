@@ -1,14 +1,14 @@
 import { useContext, useReducer, useEffect, createContext } from 'react'
+import reducer from './reducer'
+import cartItems from './data'
+
+import { CLEAR_CART, REMOVE, INCREASE, DECREASE, LOADING, DISPLAY_ITEMS } from './actions'
 
 const AppContext = createContext()
 
-const reducer = (state, actioon) => {
-  return state;
-}
-
 const initialState = {
   loading: false,
-  cart: []
+  cart: [...cartItems]
 }
 
 export const AppProvider = ({children}) => {
