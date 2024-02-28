@@ -1,5 +1,7 @@
 import React from 'react'
 import {createClient} from 'contentful'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 const client = createClient({
   space: 'y7yuwbyznfwr',
@@ -7,12 +9,33 @@ const client = createClient({
   accessToken: '61AJ2TITmMxLY-VhzkvWaC73bjfWRRxhPnycwwwMuDk'
 })
 
-client.getEntries({content_type: 'projects'}).then((response) => console.log(response))
+export const useFetchProjects = () => {
+  const [loading, setLoading] = useState(true)
+  const [projects, setProjects] = useState([])
 
-// const fetchProjects = () => {
-//   return (
-//     <div>fetchProjects</div>
-//   )
-// }
+  const getData = async() => {
+    try {
+      const response = await client.getEntries({content_type: 'projects'}) 
+      const projects = response.items.map((item) => {
+        const {title, url, image} = item.fields
+        const id = item.sys.id 
+        const img = image?.fields?.file?.url
+        return {title, url, id, img}
+      })
+      setProjects(projects)
+      setLoading(false)
+    } catch (error) {
+      console.log(error);
+      setLoading(false)
+    }
+  }
 
-// export default fetchProjects
+  useEffect(() => {
+    getData()
+  }, [])
+  return {loading, projects}
+}
+
+// client.getEntries({content_type: 'projects'}).then((response) => console.log(response))
+
+ 
