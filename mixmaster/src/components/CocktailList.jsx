@@ -8,8 +8,8 @@ const CocktailList = ({drinks}) => {
     return <h4 style={{textAlign:"center"}}>No matching cocktail found...</h4>
   }
   const formattedDrinks = drinks.map((item) => {
-    const {idDrink, strDrink, strDrinkThumb, srAlcoholic, strGlass} = item 
-    return {id:idDrink, name:strDrink, glass:strGlass, image:strDrinkThumb}
+    const {idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass} = item 
+    return {id:idDrink, name:strDrink, info:strAlcoholic, glass:strGlass, image:strDrinkThumb}
   })
 
   return (
