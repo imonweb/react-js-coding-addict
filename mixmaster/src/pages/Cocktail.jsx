@@ -1,24 +1,38 @@
  
-import {useLoaderData, Link, Navigate} from 'react-router-dom'
+import {useLoaderData, Link, Navigate, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import Wrapper from '../assets/wrappers/CocktailPage'
+
+import {useQuery} from '@tanstack/react-query'
 
 const singleCocktailUrl =
   'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
 
-export const loader = async ({params}) => {
+const singleCocktailQuery = (id) => {
+  return {
+    queryKey: ['cocktail', id],
+    queryFn: async () => {
+      const { data } = await axios.get(`${singleCocktailUrl}${id}`);
+      return data;
+    },
+  };
+};
+
+export const loader = (queryClient) => async ({params}) => {
   const {id} = params;
-  const {data} = await axios.get(`${singleCocktailUrl}${id}`)
+  await queryClient.ensureQueryData(singleCocktailQuery(id));
+  // const {data} = await axios.get(`${singleCocktailUrl}${id}`)
   // const response = await axios.get(`${singleCocktailUrl}${id}`)
   // console.log(response);
   // return null;
-  return {id, data};
+  return {id};
 }
 
 
 const Cocktail = () => {
-  const {id, data} = useLoaderData()
-
+  const {id} = useLoaderData()
+  const navigate = useNavigate();
+  const { data } = useQuery(singleCocktailQuery(id));
   // if(!data) return <h2>something went wrong</h2>
   if(!data) return <Navigate to='/' />
 
