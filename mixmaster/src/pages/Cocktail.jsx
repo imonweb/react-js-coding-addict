@@ -41,7 +41,7 @@ const Cocktail = () => {
   // console.log(singleDrink);
   const {
     strDrink: name,
-    strDrinkThumb: image,
+    strDrinkThumb: image,a
     strAlcoholic: info,
     strCategory: category,
     strGlass: glass,
